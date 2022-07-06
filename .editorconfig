@@ -1,0 +1,10 @@
+﻿[*.{cs,vb}]
+
+# IDE0060: Remove unused parameter
+dotnet_code_quality_unused_parameters = non_public
+
+# IDE0053: Use expression body for lambda expressions
+csharp_style_expression_bodied_lambdas = false
+
+# IDE0022: Use expression body for methods
+csharp_style_expression_bodied_methods = false
