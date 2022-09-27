@@ -57,8 +57,8 @@ namespace EventBus.Api{
                 return new ListenerList(parentList);
             }
             try{
-                Event evt = (Event)Activator.CreateInstance(eventClass);
-                return evt.GetListenerList();
+                ListenerList parentList = GetListenerList(eventClass.BaseType);
+                return new ListenerList(parentList);
             }catch(Exception e) when(e is MissingMethodException || e is MemberAccessException || e is TargetInvocationException){
                 throw new EventListenerException($"Error computing listener list for {eventClass.Name}", e);
             }
